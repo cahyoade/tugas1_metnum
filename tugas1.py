@@ -2,7 +2,7 @@ from sympy import *
 x = Symbol('x')
 
 f = x**3 - 5*x**2 + 7*x - 3
-err = 0.0001
+err = 0.000001
 
 f_prime = f.diff(x)
 f_double_prime = f_prime.diff(x)
@@ -73,13 +73,13 @@ def secant_modified(guess, guess1, guess2, err, func):
     return guess
 
 print('newton method :')
-newton(2.2, err, f, f_prime)
+newton(1.9, err, f, f_prime)
 
 print('\nmodified newton method :')
-newton_modified(2.2, err, f, f_prime, f_double_prime)
+newton_modified(1.9, err, f, f_prime, f_double_prime)
 
 print('\nsecant method :')
-secant(2.2, 2, err, f)
+secant(2, 1.8, err, f)
 
 print('\nmodified secant method :')
-secant_modified(2.2, 2.1, 2, err, f)
+secant_modified(2, 1.9, 1.8, err, f)
